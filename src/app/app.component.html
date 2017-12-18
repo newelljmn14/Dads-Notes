@@ -1,3 +1,6 @@
 <h1>
   {{title}}
 </h1>
+
+<button (click)="renderNewNoteForm()">add</button>
+<app-new-note-form *ngIf="shouldCreateNewNote"></app-new-note-form>
