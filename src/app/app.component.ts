@@ -36,8 +36,3 @@ export class AppComponent implements OnInit {
     console.log(notesArray)
   }
 }
-
-
-        // value.forEach(element => {
-        //   this.notesArray.push(element);
-        // });
