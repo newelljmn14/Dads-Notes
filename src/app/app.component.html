@@ -1,9 +1,34 @@
-<h1>
-  {{title}}
-</h1>
 
-<button (click)="renderNewNoteForm()">add</button>
+<button (click)="renderNewNoteForm()" style="margin-bottom: 15px">add a new note</button>
 <app-new-note-form *ngIf="shouldCreateNewNote" (successfulSubmission)="hideNoteForm()"></app-new-note-form>
 
+<div>
+  <button (click)="filterOn('owners', ownersFilter)">filter by owner</button>
+  <input [(ngModel)]="ownersFilter" type="text"/>
+</div>
+<div>
+  <button (click)="filterOn('assigned', assignedFilter)">filter by assigned</button>
+  <input [(ngModel)]="assignedFilter" type="text"/>
+</div>
+<div>
+  <button (click)="filterOn('forum', forumFilter)">filter by forum</button>
+  <input [(ngModel)]="forumFilter" type="text"/>
+</div>
+<div>
+  <button (click)="filterOn('completion', completionFilter)">filter by completion</button>
+  <input [(ngModel)]="completionFilter" type="text"/>
+</div>
+<div>
+  <button (click)="filterOn('priority', priorityFilter)">filter by priority</button>
+  <input [(ngModel)]="priorityFilter" type="text"/>
+</div>
+
 <p>notes:</p>
-<app-note-record *ngFor="let note of notesArray" [noteFromDatabase]="note"></app-note-record>
+
+<div *ngIf="!isFiltered">
+  <app-note-record  *ngFor="let note of notesArray" [noteFromDatabase]="note"></app-note-record>
+</div>
+<div *ngIf="isFiltered">
+  <app-note-record  *ngFor="let note of filteredNotesArray" [noteFromDatabase]="note"></app-note-record>
+</div>
+
