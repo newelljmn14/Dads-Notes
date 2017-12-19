@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.retrieveNotesFromServer();
-
-    console.log('notes array', this.notesArray);
   }
 
   renderNewNoteForm() {
@@ -32,6 +30,9 @@ export class AppComponent implements OnInit {
       });
   }
 
+hideNoteForm() {
+  this.shouldCreateNewNote = false;
+}
   showNotesArray(notesArray) {
     console.log(notesArray)
   }

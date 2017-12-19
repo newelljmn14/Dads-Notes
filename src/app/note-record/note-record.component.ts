@@ -20,9 +20,4 @@ export class NoteRecordComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  test(note) {
-    console.log(note)
-  }
-
 }

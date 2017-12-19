@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
@@ -7,6 +7,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./new-note-form.component.css']
 })
 export class NewNoteFormComponent implements OnInit {
+  @Output() successfulSubmission = new EventEmitter<boolean>();
   owners: string;
   assigned: string;
   forum: string;
@@ -34,6 +35,7 @@ export class NewNoteFormComponent implements OnInit {
       .then(() => {
         this.clearFields();
         alert('Your note has been successfully added');
+        this.successfulSubmission.emit(true);
       });
   }
 
