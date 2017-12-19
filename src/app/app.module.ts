@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2/angularfire2';
 
 import { AppComponent } from './app.component';
 import { NewNoteFormComponent } from './new-note-form/new-note-form.component';
+import { NoteRecordComponent } from './note-record/note-record.component';
 
   const config = {
     apiKey: 'AIzaSyDDYnV64PIbFVri-jIz85yFh7_RepKcO7k',
@@ -20,7 +21,8 @@ import { NewNoteFormComponent } from './new-note-form/new-note-form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NewNoteFormComponent
+    NewNoteFormComponent,
+    NoteRecordComponent
   ],
   imports: [
     BrowserModule,

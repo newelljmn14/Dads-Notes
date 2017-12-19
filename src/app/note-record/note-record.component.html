@@ -1,0 +1,31 @@
+<div *ngIf="noteFromDatabase">
+  <div class="header" id="owners">
+    <div>owners:</div>
+    {{noteFromDatabase['owners']}}
+  </div>
+  <div class="header" id="assigned">
+    <div>assigned:</div>
+    {{noteFromDatabase['assigned']}}
+  </div>
+  <div class="header" id="forum">
+    <div>forum:</div>
+    {{noteFromDatabase['forum']}}
+  </div>
+  <div class="header" id="completion">
+    <div>completion:</div>
+    {{noteFromDatabase['completion']}}
+  </div>
+  <div class="header" id="priority">
+    <div>priority:</div>
+    {{noteFromDatabase['priority']}}
+  </div>
+  <div class="header" id="short-description">
+    <div>short-description:</div>
+    {{noteFromDatabase['short-description']}}
+  </div>
+  <div class="header" id="long-description">
+    <div>long-description:</div>
+    {{noteFromDatabase['long-description']}}
+  </div>
+  <button (click)="test(noteFromDatabase)">test</button>
+</div>

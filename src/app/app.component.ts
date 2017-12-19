@@ -8,21 +8,36 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
   shouldCreateNewNote: boolean = false;
   firebaseTestText: string;
+  notesArray = [];
 
   constructor(private afDd: AngularFireDatabase) {}
 
   ngOnInit() {
-    this.afDd.list('/test')
-      .valueChanges()
-      .subscribe(value => {
-        console.log(value);
-      });
+    this.retrieveNotesFromServer();
+
+    console.log('notes array', this.notesArray);
   }
 
   renderNewNoteForm() {
     this.shouldCreateNewNote = true;
   }
+
+  retrieveNotesFromServer() {
+    this.afDd.list('/notes')
+      .valueChanges()
+      .subscribe(value => {
+        this.notesArray = value;
+      });
+  }
+
+  showNotesArray(notesArray) {
+    console.log(notesArray)
+  }
 }
+
+
+        // value.forEach(element => {
+        //   this.notesArray.push(element);
+        // });

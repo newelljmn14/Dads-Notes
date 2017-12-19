@@ -4,3 +4,7 @@
 
 <button (click)="renderNewNoteForm()">add</button>
 <app-new-note-form *ngIf="shouldCreateNewNote"></app-new-note-form>
+
+<p>notes:</p>
+<!--<button (click)="showNotesArray(notesArray)">test</button>-->
+<app-note-record *ngFor="let note of notesArray" [noteFromDatabase]="note"></app-note-record>
