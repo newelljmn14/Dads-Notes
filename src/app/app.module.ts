@@ -2,21 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2/angularfire2';
 
 import { AppComponent } from './app.component';
 import { NewNoteFormComponent } from './new-note-form/new-note-form.component';
 import { NoteRecordComponent } from './note-record/note-record.component';
+import { environment } from 'environments/environment';
 
-  const config = {
-    apiKey: 'AIzaSyDDYnV64PIbFVri-jIz85yFh7_RepKcO7k',
-    authDomain: 'dad-s-notes.firebaseapp.com',
-    databaseURL: 'https://dad-s-notes.firebaseio.com',
-    projectId: 'dad-s-notes',
-    storageBucket: '',
-    messagingSenderId: '957706340333'
-  };
+  // const config = {
+  //   apiKey: 'AIzaSyDDYnV64PIbFVri-jIz85yFh7_RepKcO7k',
+  //   authDomain: 'dad-s-notes.firebaseapp.com',
+  //   databaseURL: 'https://dad-s-notes.firebaseio.com',
+  //   projectId: 'dad-s-notes',
+  //   storageBucket: '',
+  //   messagingSenderId: '957706340333' 
+  // };
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NoteRecordComponent } from './note-record/note-record.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(config)
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
