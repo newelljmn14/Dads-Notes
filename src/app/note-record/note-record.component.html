@@ -1,30 +1,36 @@
 <div *ngIf="noteFromDatabase">
-  <div class="header" id="owners">
-    <div>owners:</div>
-    {{noteFromDatabase['owners']}}
-  </div>
-  <div class="header" id="assigned">
-    <div>assigned:</div>
-    {{noteFromDatabase['assigned']}}
-  </div>
-  <div class="header" id="forum">
-    <div>forum:</div>
-    {{noteFromDatabase['forum']}}
-  </div>
-  <div class="header" id="completion">
-    <div>completion:</div>
-    {{noteFromDatabase['completion']}}
-  </div>
-  <div class="header" id="priority">
-    <div>priority:</div>
-    {{noteFromDatabase['priority']}}
-  </div>
-  <div class="header" id="short-description">
-    <div>short-description:</div>
-    {{noteFromDatabase['short-description']}}
-  </div>
-  <div class="header" id="long-description">
-    <div>long-description:</div>
-    {{noteFromDatabase['long-description']}}
-  </div>
+  <table>
+    <tr>
+      <th>owners</th>
+      <th>assigned</th>
+      <th>forum</th>
+      <th>completion</th>
+      <th>priority</th>
+      <th>short-description</th>
+      <th>long-description</th>
+    </tr>
+    <tr>
+      <td class="header" id="owners">
+      {{noteFromDatabase['owners']}}
+      </td>
+      <td class="header" id="assigned">
+        {{noteFromDatabase['assigned']}}
+      </td>
+      <td class="header" id="forum">
+        {{noteFromDatabase['forum']}}
+      </td>
+      <td class="header" id="completion">
+        {{noteFromDatabase['completion']}}
+      </td>
+      <td class="header" id="priority">
+        {{noteFromDatabase['priority']}}
+      </td>
+      <td class="header" id="short-description">
+        {{noteFromDatabase['short-description']}}
+      </td>
+      <td class="header" id="long-description">
+        {{noteFromDatabase['long-description']}}
+      </td>
+    </tr>
+  </table>
 </div>
